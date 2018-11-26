@@ -1,1 +1,1 @@
-Java implementtion of Lintcode
+# Java implementtion of Lintcode
