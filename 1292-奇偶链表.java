@@ -54,4 +54,24 @@ public class Solution {
 
         return realHead.next;
     }
+
+    // 这个方法更好
+    public ListNode oddEvenList2(ListNode head) {
+        if (head == null || head.next == null || head.next.next == null) {
+            return head;
+        }
+
+        ListNode oddHead = head;
+        ListNode evenHead = head.next;
+        ListNode evenNode = head.next;
+
+        while (oddHead.next != null && evenNode.next != null) {
+            oddHead.next = oddHead.next.next;
+            oddHead = oddHead.next;
+            evenNode.next = evenNode.next.next;
+            evenNode = evenNode.next;
+        }
+        oddHead.next = evenHead;
+        return head;
+    }
 }
